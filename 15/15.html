@@ -1,0 +1,57 @@
+!DOCTYPE html
+html lang=ru
+head
+  meta charset=utf-8
+  meta name=viewport content=width=device-width, initial-scale=1
+  titleСовременный CSS 15title
+  style
+    root { color-scheme light dark; }
+    html, body { height 100%; }
+    body { margin 0; font 16px1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
+           background #f8fafc; color #0b1020; }
+    .page { min-height 100vh; min-height 100svh; min-height 100dvh; 
+            display flex; flex-direction column; }
+    main { flex 1; }
+    .skip-link { position absolute; inset-inline-start 1rem; inset-block-start -100px; 
+                 z-index 10000; padding .5rem .75rem; background #111; color #fff; 
+                 border-radius .5rem; text-decoration none; }
+    .skip-linkfocus-visible { inset-block-start 1rem; outline 3px solid #2563eb; outline-offset 2px; }
+    @media (pointer coarse) { .skip-link { min-height 44px; padding .75rem 1rem; } }
+    .header { position sticky; top 0; padding-block calc(.75rem + env(safe-area-inset-top)); 
+              padding-inline calc(var(--space-md, 1rem) + env(safe-area-inset-left)) calc(var(--space-md, 1rem) + env(safe-area-inset-right)); 
+              background #2563eb; color #fff; z-index 100; isolation isolate; 
+              box-shadow 0 1px 3px rgba(0,0,0,.1); }
+    .projects-preview { margin-block var(--space-2xl, 3rem); }
+    .projects-preview-grid { display grid; grid-template-columns repeat(auto-fit, minmax(18rem, 1fr)); 
+                             gap var(--space-lg, 1.5rem); }
+    .project-card { background #fff; border-radius .75rem; box-shadow 0 4px 6px -1px rgb(0 0 0  0.1); 
+                    transition transform .2s ease, box-shadow .2s ease; min-width 0; }
+    .project-cardhover { transform translateY(-4px); }
+    .project-card-title, .project-card-description { overflow-wrap anywhere; }
+    @container projects (min-width 640px) { .projects-list { grid-template-columns repeat(2, 1fr); } }
+    @container projects (min-width 960px) { .projects-list { grid-template-columns repeat(3, 1fr); } }
+    .section-title { font-size clamp(1.5rem, 1.1rem + 2vw, 2rem); }
+  style
+head
+body
+  a href=#main class=skip-linkПерейти к содержаниюa
+  div class=page
+    header class=header
+      nav aria-label=Основная навигацияНавигацияnav
+    header
+    main id=main
+      section class=projects-area style=container-type inline-size; container-name projects;
+        div class=projects-preview
+          h1 class=section-titleПроектыh1
+          div class=projects-preview-grid
+            article class=project-cardКарточка 1article
+            article class=project-cardКарточка 2article
+            article class=project-cardКарточка 3article
+          div
+        div
+      section
+    main
+    footer class=footerФутерfooter
+  div
+body
+html
